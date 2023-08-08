@@ -91,27 +91,27 @@ let products = {
           <div class="container">
           <h5 class="product-name">${items.name}</h5>
           <h6><b>Price:</b>${items.price}</h6>
-          <a href="detail.html?id=${key}">Go</a>
           <button onclick="addToCart(${key})">Thêm vào giỏ hàng</button>
+          <button><a style="width: 100%;display: block" href="detail.html?id=${key}">Go</a></button>
           </div>`;
     document.getElementById("products").appendChild(card);
   }
   
-  for (let items of products.data) {
-    let product = localStorage.product;
-    if (product) {
-      product = JSON.parse(product);
-    } else {
-      product = [];
-    }
-    product.push({
-      name: items.name,
-      price: items.price,
-      images: items.image,
-    });
+  // for (let items of products.data) {
+  //   let product = localStorage.product;
+  //   if (product) {
+  //     product = JSON.parse(product);
+  //   } else {
+  //     product = [];
+  //   }
+  //   product.push({
+  //     name: items.name,
+  //     price: items.price,
+  //     images: items.image,
+  //   });
   
-    localStorage.setItem("product", JSON.stringify(product));
-  }
+  //   localStorage.setItem("product", JSON.stringify(product));
+  // }
   
   const addToCart = (key) => {
     // get item has key param
